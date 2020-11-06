@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 
 const cors = require("cors");
 const userRoutes = require("./routes/user-routes")
+const todoRoutes = require("./routes/todo-routes")
 
 //Models
 const User = require("./models/user-model");
@@ -14,14 +15,11 @@ app.use(bodyParser.json());
 
 //Route Middleware
 app.use("/user", userRoutes)
-
-
+app.use("/todo", todoRoutes)
 
 app.get("/", (req, res) => {
   res.send("Hello");
 });
-
-
 
 mongoose
   .connect(
