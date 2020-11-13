@@ -2,9 +2,10 @@ const mongoose = require("mongoose");
 
 const todoSchema = new mongoose.Schema(
   {
-    todoName: { type: String, required: true },
-    date: { type: Date, required: true },
-    label: { type: String, required: true },
+    todoName: { type: String },
+    date: { type: Date },
+    label: { type: String },
+    isDone: { type: Boolean, default: false },
     creator: { type: mongoose.Types.ObjectId, required: true, ref: "User" },
   },
   { timestamps: true }
